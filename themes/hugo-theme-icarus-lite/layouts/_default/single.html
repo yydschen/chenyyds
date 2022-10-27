@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+        <div class="card">
+
+            <article>
+
+                {{ if .Params.date_hidden }}
+                {{ else }}
+                    {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+                    {{ $dateFormat := .Site.Params.dateFormat }}
+                <div class="time" datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</div>
+                {{ end }}
+
+                <h2 class="title">{{ .Title }}</h2>
+
+                <div class="text">{{ .Content }}</div>
+            </article>
+
+        </div>
+
+        <div class="pagination">
+            <a onclick="javascript:history.back();">{{ $.Site.Params.PageBack }}</a>
+        </div>
+ <!-- 评论block部分加在这里 -->
+ 		        <div class="card">
+            <div class="comments" style="margin-top: 10px;">
+              <span> Comments 💬 </span>
+              <div id="tcomment"></div>
+              
+              
+              <script src="https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js"></script>
+              <script>
+              twikoo.init({
+                envId: 'https://twikoo.chenyyds.com', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+                el: '#tcomment', // 容器元素
+                // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+                // path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/client/utils/i18n/index.js
+              })
+              </script>
+            </div>
+{{ end }}

@@ -1,0 +1,146 @@
+## config example
+
+## If you have created a new hugo site and dont know how to do next, 
+## just DELETE config.toml file at the site root directory 
+## and then copy all the files from exampleSite folder to site root folder (that you just created).
+
+## Your posts files should be in /content/posts/ folder. See the [params.mainSections] section below.
+
+
+baseURL: https://example.com/
+
+## This would show at <head> section in html files
+languageCode: zh-CN   
+
+theme: hugo-theme-icarus-lite
+
+title: exampleTitle
+
+hasCJKLanguage: true
+summaryLength: 1000
+paginate: 10
+
+permalinks:
+  posts: /:section/:filename/
+  pages: /:section/:filename/
+
+
+## Custom Params
+params:
+    description:      ## Site description
+
+    dateFormat: "Jan 2, 2006"
+
+    externalStyle: false  ## Set false to use internal style; true to external CSS file.
+    externalStyleVersion: 20060102  ## If you need to refresh the CSS file for browsers, then change this number.
+    
+    mainSections: posts  ## This means that you need to put posts .md files in the folder /content/posts/ , then these files can be viewed at Homepage.
+
+    navbarSticky: true  ## Set to true to make navbar menu sticky
+
+    navbarLogo: 
+        enabled: true
+        imgEnabled: false
+        imgPath: "/logo.svg"  ## at /static folder
+        imgWidth: "24px"
+        imgHeight: "24px"
+        svgEnabled: true  ## Put your SVG code in /layout/partials/custom-logo.html if enabled
+
+    ## Buttons Text
+    PageBack: "Back to Prev"
+    OlderPosts: "Older"
+    NewerPosts: "Newer"
+    read_more: "Read More"
+
+    ## Body Text
+    titleClickable: false  # Set true to make the title clickable as the ReadMore button
+    
+    postsNoSummary: false  ## Set true to always show full content for Posts
+    pagesNoSummary: false  ## Set true to always show full content for Pages
+
+    postsReadMore: false  ## Set true to always show Read More button for Posts
+    pagesReadMore: false  ## Set true to always show Read More button for Pages
+
+    footerCopyright: 
+        siteUrl: Your Domain / Name  ## This would show after footer text "© 202X"
+
+    ## for websites hosted on mainland China servers.
+    ## 下面这部分是页脚的备案信息
+    ICP: 
+        enabled: false
+        province: 京
+        certnum: "06010200"
+
+## Navbar Menus
+menu:
+  home:
+  - identifier: "posts"  ## This identifier value needs to be equal to the [params.mainSections] above
+    name: "HOME"  ## The NAME will show as menu text
+    title: Home  ## The TITLE will show on the Browser
+    url: /
+    weight: 1
+  main:
+  - identifier: "pages"  ## Each identifier value should be unique and equal to the name of the FOLDER in which those original .md files are
+    name: "PAGES"
+    title: Pages / Custom Title
+    url: /pages/
+    weight: 2
+  ## Try to ollow these rules to add menus as you like  
+  - identifier: "me"
+    name: "404"
+    url: /404/
+    weight: 3
+
+## Docs: https://gohugo.io/getting-started/configuration-markup#goldmark
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true  ## Set to false if you neet to customize the headings' IDs
+      autoHeadingIDType: github
+    renderer:
+      hardWraps: false
+      unsafe: true  ## Set to true if you have HTML content inside Markdown
+      xhtml: false
+
+## Decrease the size of .html and .css files
+minify:
+  disableCSS: false
+  disableHTML: false
+  disableJS: true
+  disableJSON: false
+  disableSVG: false
+  disableXML: false
+  minifyOutput: true
+  tdewolff:
+    css:
+      keepCSS2: false
+      precision: 0
+    html:
+      keepComments: false
+      keepConditionalComments: true
+      keepDefaultAttrVals: true
+      keepDocumentTags: true
+      keepEndTags: true
+      keepQuotes: false
+      keepWhitespace: false
+    js:
+      keepVarNames: false
+      precision: 0
+    json:
+      keepNumbers: false
+      precision: 0
+    svg:
+      precision: 0
+    xml:
+      keepWhitespace: false

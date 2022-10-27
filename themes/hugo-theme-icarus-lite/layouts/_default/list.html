@@ -1,0 +1,70 @@
+{{ define "main" }}
+
+    {{ range .Paginator.Pages }}
+    <div class="card">
+
+        <article>
+
+            {{ if .Params.date_hidden }}
+            {{ else }}
+                {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+                {{ $dateFormat := .Site.Params.dateFormat }}
+            <div class="time" datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</div>
+            {{ end }}
+
+                {{ if .Site.Params.titleClickable }}
+                <h2 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                {{ else }}
+                <h2 class="title">{{ .Title }}</h2>
+                {{ end }}
+            
+                {{ if .Site.Params.pagesNoSummary }}
+                <div class="text">{{ .Content }}</div>
+                {{ else }}
+                    {{ if .Params.no_summary }}
+                    <div class="text">{{ .Content }}</div>
+                    {{ else }}
+                    <div class="text">{{ .Summary }}</div>
+                    {{ end }}
+                {{ end }}
+
+                {{ if .Site.Params.postsReadMore }}
+                <a class="button" href="{{.RelPermalink}}">
+                    {{ with .Params.read_more_txt }}
+                        {{ . }}
+                </a>
+                    {{ else }}
+                        {{ .Site.Params.read_more }}
+                </a>
+                    {{ end }}
+                {{ else }}
+                    {{ if .Params.read_more }}
+                    <a class="button" href="{{.RelPermalink}}">
+                        {{ with .Params.read_more_txt }}
+                            {{ . }}
+                    </a>
+                        {{ else }}
+                            {{ .Site.Params.read_more }}
+                    </a>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+
+                {{ if .Params.link_go }}
+                    {{ if .Params.link_same }}
+                    <a class="button" href="{{ .Params.link_go }}">{{ .Params.link_txt }}</a>
+                    {{ else }}
+                    <a class="button" href="{{ .Params.link_go }}" target="_blank" rel="noopener">{{ .Params.link_txt }}</a>
+                    {{ end }}
+                {{ end }}
+
+        </article>
+
+    </div>
+    {{ end }}
+
+    {{ if (or ( .Paginator.HasNext ) ( .Paginator.HasPrev )) }}
+        {{ partial "pagination.html" . }}
+    {{ end }}
+
+{{ end }}

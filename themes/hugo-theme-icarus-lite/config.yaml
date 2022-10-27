@@ -1,0 +1,55 @@
+module:
+    hugoVersion:
+        extended: false
+        min: "0.87.0"
+
+## If you have created a new hugo site and dont know how to do next, 
+## just DELETE config.toml file at the site root directory 
+## and then copy all the files from exampleSite folder to site root folder (that you just created).
+
+## Your posts files should be in /content/posts/ folder. See the [params.mainSections] section below.
+
+params:
+    description:      ## Site description
+
+    dateFormat: "Jan 2, 2006"
+
+    externalStyle: false  ## Set false to use internal style; true to external CSS file.
+    externalStyleVersion: 20060102  ## If you need to refresh the CSS file for browsers, then change this number.
+    
+    mainSections: posts  ## This means that you need to put posts .md files in the folder /content/posts/ , then these files can be viewed at Homepage.
+
+    navbarSticky: true  ## Set to true to make navbar menu sticky
+
+    navbarLogo: 
+        enabled: true
+        imgEnabled: false
+        imgPath: "/logo.svg"  ## at /static folder
+        imgWidth: "24px"
+        imgHeight: "24px"
+        svgEnabled: true  ## Put your SVG code in /layout/partials/custom-logo.html if enabled
+        
+    ## Buttons Text
+    PageBack: "Back to Prev"
+    OlderPosts: "Older"
+    NewerPosts: "Newer"
+    read_more: "Read More"
+
+    ## Body Text
+    titleClickable: false  # Set true to make the title clickable as the ReadMore button
+    
+    postsNoSummary: false  ## Set true to always show full content for Posts
+    pagesNoSummary: false  ## Set true to always show full content for Pages
+
+    postsReadMore: false  ## Set true to always show Read More button for Posts
+    pagesReadMore: false  ## Set true to always show Read More button for Pages
+
+    footerCopyright: 
+        siteUrl: Your Domain / Name  ## This would show after footer text "© 202X"
+
+    ## for websites hosted on mainland China servers.
+    ## 下面这部分是页脚的备案信息
+    ICP: 
+        enabled: false
+        province: 京
+        certnum: "06010200"

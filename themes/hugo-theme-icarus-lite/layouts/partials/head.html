@@ -1,0 +1,67 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+    {{ $currentPage := . }}
+
+    {{ if .IsHome }}
+    <title>{{ .Site.Title | title }}</title>
+    {{ else }}
+        {{ if .Params.page_title }}
+        <title>{{ .Params.page_title }}</title>
+        {{ else }}
+            {{ if .Params.Title }}
+            <title>{{ .Params.Title }}</title>
+            {{ else }}
+                {{ if .Site.Menus.main }}
+                    {{ range .Site.Menus.main }}
+                        {{ if eq .Identifier $currentPage.Section }}
+                            {{ with .Title }}
+                            <title>{{ . | title }}</title>
+                            {{ else }}
+                            <title>{{ $currentPage.Section | title }}</title>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ if .IsHome }}
+    <meta name="description" content="{{ $.Site.Params.description }}" />
+    {{ end }}
+    {{ with .Description }}
+    <meta name="description" content="{{ . }}" />
+    {{ end }}
+
+    {{ if .Site.Params.externalStyle }}
+    {{ $css := resources.Get "css/style.css" }}
+    {{ $style := $css | resources.Minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}?v={{ .Site.Params.externalStyleVersion }}" media="print" onload="this.media='all'; this.onload = null">
+    <noscript><link rel="stylesheet" href="{{ $style.RelPermalink }}?v={{ .Site.Params.externalStyleVersion }}"></noscript>
+    {{ else }}
+        {{- partial "internal-style.html" . -}}
+    {{ end }}
+
+    {{ if .Site.Params.navbarSticky }}
+    <style>
+        body {
+            padding-top: 3.2rem;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1;
+        }
+    </style>
+    {{ end }}
+
+    {{- partial "custom-style.html" . -}}
+
+    {{- partial "custom-head.html" . -}}
+
+
+</head>

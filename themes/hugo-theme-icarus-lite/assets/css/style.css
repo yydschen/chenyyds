@@ -1,0 +1,473 @@
+
+@font-face {
+  font-family: Emoji Fonts;
+  src: local(Apple Color Emoji),
+       local(Segoe UI Emoji),
+       local(Segoe UI Symbol),
+       local(Noto Color Emoji);
+  unicode-range: U+1F000-1F644, U+203C-3299;
+}
+
+@font-face {
+  font-family: Latin Condensed;
+  src: local(Avenir Next Condensed),
+       local(Avenir),
+       local(Roboto Condensed),
+       local(sans-serif-condensed);
+  unicode-range: U+0030-U+0039, U+0041-U+005A, U+0061-U+007A;
+}
+
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+/*! common */
+html {
+  background-color: white;
+  font-size: 14px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overscroll-behavior: none!important;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.container {
+  font-family: Iowan Old Style, Cambria, Georgia, 华文中宋, STZhongsong, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Emoji Fonts, Candara, Helvetica Neue, Helvetica, Arial, PingFang SC, DengXian, Microsoft YaHei, sans-serif, serif;
+  font-size: 1rem;
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+footer .container {
+  font-family: Latin Condensed, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, TsangerYuMo W02, Candara, Helvetica Neue, Helvetica, Arial, sans-serif, serif;
+}
+
+a {
+  color: #36b;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through solid #222;
+  text-decoration-thickness: 1px ;
+}
+
+hr {
+  border: 1px solid #f5f5f5;
+  box-shadow: none;
+  margin: .8em 0 .9em 0;
+  background-color: #f5f5f5;
+}
+
+small {
+  display: inline-block;
+  font-size: .85em;
+}
+
+/*! navbar */
+nav {
+  background-color: white;
+  -webkit-box-shadow: rgba(0, 0, 0,.1) 0 4px 6px -1px;
+  box-shadow: rgba(0, 0, 0,.1) 0 4px 6px -1px;
+  display: block;
+  overflow-x: hidden;
+  position: static;
+}
+
+nav .container {
+  align-items: center;
+  display: flex;
+  font-size: 1.15rem;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  overflow-x: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  white-space: nowrap;
+}
+
+nav img, nav svg {
+  height: auto;
+  margin-left: .35rem;
+  margin-right: .5rem;
+}
+
+nav a {
+  background-color: white;
+  color: #222;
+  font-size: 1em;
+  height: auto;
+  padding: 0 .35rem;
+}
+
+nav a.menu-active {
+  color: #1558d6;
+}
+
+nav a:hover {
+  background-color: #f5f5f5;
+}
+
+/*! .main section*/
+.main .container {
+  display: block;
+  padding-top: 1.35rem;
+  padding-bottom: .2rem;
+}
+
+/*! main card section*/
+.card {
+  background-color: white;
+  border-radius: 0.55rem;
+  -webkit-box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+  margin-bottom: 1.35rem;
+  max-width: 100%;
+  padding: 1.45rem;
+  position: relative;
+}
+
+article {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.time {
+  color: #222;
+  font-size: .75em;
+}
+
+.time-invisible {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #222;
+  margin: .45em 0 .45em 0;
+}
+
+h1 {
+  font-size: 1.375em;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+article h2:first-child, .time + h2 {
+  margin-top: 0;
+  margin-bottom: 0.375em;
+}
+
+p {
+  hanging-punctuation: allow-end;
+  margin-top: .55em;
+  margin-bottom: .55em;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+article a.button {
+  background-color: #f3f3f3;
+  border: 1px solid transparent;
+  border-radius: 0.35rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #222;
+  display: inline-flex;
+  font-size: .8em;
+  line-height: 2.1em;
+  margin-top: 1em;
+  padding: 0 .35em;
+  position: relative;
+}
+
+@media (min-width:641px) {
+  article a:hover {
+    background-color: #ececec;
+  }
+}
+
+article a:active {
+  background-color: #dfdfdf;
+}
+
+article .text a[href*="//"]::after { /* https://www.zhangxinxu.com/sp/icon/ */
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E %3Cpath fill='%2336b' d='M576 24v127.984c0 21.461-25.96 31.98-40.971 16.971l-35.707-35.709-243.523 243.523c-9.373 9.373-24.568 9.373-33.941 0l-22.627-22.627c-9.373-9.373-9.373-24.569 0-33.941L442.756 76.676l-35.703-35.705C391.982 25.9 402.656 0 424.024 0H552c13.255 0 24 10.745 24 24zM407.029 270.794l-16 16A23.999 23.999 0 0 0 384 303.765V448H64V128h264a24.003 24.003 0 0 0 16.97-7.029l16-16C376.089 89.851 365.381 64 344 64H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V287.764c0-21.382-25.852-32.09-40.971-16.97z'%3E%3C/path%3E %3C/svg%3E");
+  display: inline-block;
+  width: .65em;
+  margin: 0 .3em;
+}
+
+blockquote {
+  background-color: #f5f5f5;
+  border-left: 4px solid #dbdbdb;
+  margin-bottom: .5em;
+  margin-top: .3em;
+  padding: .45em .35em .4em .35em;
+  text-align: left;
+}
+
+code {
+  padding: 0.2em;
+  margin: 0;
+  font-family: Courier New, Courier, monospace, sans-serif, serif;
+  font-size: .875em;
+  background-color: #f5f5f5;
+	word-wrap: break-word;
+  word-break: normal;	
+  border-radius: 3px;
+}
+
+pre code {
+  display: block;
+  padding: 1.5em 1.5em;
+  font-size: .8em;
+  line-height: 2;
+  overflow-x: auto;
+}
+
+pre {
+  background-color: #fff;
+  color: #333;
+  white-space: pre;
+  hyphens: none;
+  position: relative;
+  border-width: 1px;
+  border-color: #ccc;
+  border-style: solid;
+}
+
+.highlight pre code {
+  background-color: black;
+  font-size: .8em;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 1.2em;
+}
+
+ul ul {
+  list-style-type: circle;
+}
+
+ol {
+  margin-left: 1.2em;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 1em;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 1em;
+  border: 1px solid #eee;
+}
+
+table th {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+  color: black;
+  font-weight: bold;
+  text-align: left;
+  padding: .375em .5em;
+}
+
+table td, table tc {
+  color: #333;
+  font-size: .9em;
+  padding: .5em .5em;
+  text-align: left;
+  border-right: 1px solid #eee;
+}
+
+table tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/*! .main pagination section */
+.pagination {
+  align-items: center;
+  display: flex;
+  font-size: 1.1rem;
+  justify-content: flex-start;
+  margin-bottom: .75rem;
+  padding: 0 0 .3rem 0;
+}
+
+.pagination .page-num {
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pagination a {
+  background-color: white;
+  border-color: transparent;
+  border-radius: 0.35rem;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+  color: #222;
+  line-height: 2.5em;
+  position: relative;
+  padding: 0 .4em;
+}
+
+.pagination a.button-invisible {
+  visibility: hidden!important;
+}
+
+@media (min-width:641px) {
+  .pagination a:hover {
+    background-color: #fcfcfc;
+  }
+}
+
+.pagination a:active {
+  background-color: #f5f5f5;
+}
+
+/*! footer */
+footer {
+  background-color: white;
+  display: block;
+}
+
+footer .container {
+  font-size: .85rem;
+  line-height: 1.8;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+}
+
+footer .icp span {
+  margin-right: .2em;
+}
+
+footer a {
+  color: inherit;
+}
+
+@media (min-width:641px) {
+  footer a:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+footer a:active {
+  color: #0066cc;
+}
+
+footer p {
+  margin: 0;
+}
+
+/*! flex container */
+@media (max-width:640px) {
+  .container {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+}
+
+@media (max-width:1024px) and (min-width:641px) {
+  .container {
+    font-size: 1.25rem;
+    width: 620px;
+  }
+}
+
+@media (max-width:1280px) and (min-width:1025px) {
+  .container {
+    font-size: 1.275rem;
+    width: 720px;
+  }
+}
+
+@media (max-width:1920px) and (min-width:1281px) {
+  .container {
+    font-size: 1.3rem;
+    width: 810px;
+  }
+}
+
+@media (min-width:1921px) {
+  .container {
+    font-size: 1.375rem;
+    width: 1000px;
+  }
+}

@@ -1,0 +1,27 @@
+<nav>
+    <div class="container">
+
+        {{ $logo := .Site.Params.navbarLogo }}
+        {{- if $logo.enabled -}}
+
+            {{- if $logo.imgEnabled -}}
+                <img src="{{ $logo.imgPath }}" loading="lazy" width="{{ $logo.imgWidth }}" height="{{ $logo.imgHeight }}">
+            {{- end -}}
+
+            {{- if $logo.svgEnabled -}}
+                {{- partial "custom-logo.html" . -}}
+            {{- end -}}
+
+        {{- end -}}
+
+        {{ $currentPage := . }}
+        {{- range .Site.Menus.home -}}
+        <a href="{{ .URL }}" {{ if or $.IsHome (eq .Identifier $currentPage.Section) }}class="menu-active"{{ end }}>{{ print .Name | safeHTML }}</a>
+        {{- end -}}
+
+        {{- range .Site.Menus.main -}}
+        <a href="{{ .URL }}" {{ if eq .Identifier $currentPage.Section }}class="menu-active"{{ end }}>{{ print .Name | safeHTML }}</a>
+        {{- end -}}
+
+    </div>
+</nav>

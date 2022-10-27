@@ -1,0 +1,56 @@
+<style>
+/*
+
+*/
+
+@font-face {
+  font-family: Latin Condensed;
+  src: local(Avenir Next Condensed),
+       local(Avenir),
+       local(Roboto Condensed),
+       local(sans-serif-condensed);
+  unicode-range: U+0030-U+0039, U+0041-U+005A, U+0061-U+007A;
+}
+
+@font-face {
+  font-family: Quotation Marks;
+  src: local(American Typewriter),
+       local(Arial Rounded MT Bold);
+  unicode-range: U+0022, U+0027, U+0060, U+00B4, U+2018, U+2019, U+201C, U+201D;
+}
+
+/*
+@font-face {
+  font-family: Dashes;
+  src: local(Arial),
+       local(Times New Roman),
+       local(Times),
+       local(SimHei);
+  unicode-range: U+002D, U+2014;
+}
+*/
+
+@font-face {
+  font-family: Commercial At;
+  src: local(Verdana);
+  unicode-range: U+0040;
+}
+
+.container {
+  font-family: Quotation Marks, Dashes, Commercial At, Iowan Old Style, Candara, Georgia, Helvetica, Helvetica Neue, Latin Condensed, STZhongsong, PingFang SC, DengXian, Microsoft YaHei, system-ui, -apple-system, BlinkMacSystemFont, Droid Serif, sans-serif, serif;
+}
+
+nav .container, footer .container {
+  font-family: Latin Condensed, STZhongsong, PingFang SC, DengXian, Microsoft YaHei, system-ui, -apple-system, BlinkMacSystemFont, sans-serif, serif;
+}
+
+p {
+  hanging-punctuation: allow-end;
+}
+
+hr + h2 {
+  margin-top: 0;
+  margin-bottom: 0.375em;
+}
+
+</style>
