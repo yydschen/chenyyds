@@ -56,7 +56,7 @@ params:
     comments: true
     
     ## Body Text
-    titleClickable: false  # Set true to make the title clickable as the ReadMore button
+    titleClickable: true  # Set true to make the title clickable as the ReadMore button
     
     postsNoSummary: false  ## Set true to always show full content for Posts
     pagesNoSummary: false  ## Set true to always show full content for Pages
